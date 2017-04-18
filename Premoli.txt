@@ -1,0 +1,12 @@
+Configuracao e boot de HDFS
+http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php
+https://www.tutorialspoint.com/hadoop/hadoop_hdfs_operations.htm
+
+Interacao spark-hdfs direta
+http://stackoverflow.com/questions/27023766/spark-iterate-hdfs-directory
+
+Interacao spark-hdfs: observacao importante - porta
+http://stackoverflow.com/questions/27478096/cannot-read-a-file-from-hdfs-using-spark
+
+Leitura .JSON spark
+https://docs.databricks.com/spark/latest/data-sources/read-json.html
