@@ -1,0 +1,9 @@
+// Código Spark para o .json:
+
+val clientes = sc.textFile("/home/bigdata/dadosExemplos/clientes.json")
+clientes.collect.foreach(println)
+
+// Links uteis para a integração php <-> Spark:
+
+https://github.com/spark-jobserver/spark-jobserver
+https://gist.github.com/wgbartley/11337650
