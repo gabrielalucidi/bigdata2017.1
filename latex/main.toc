@@ -1,0 +1,5 @@
+\select@language {brazil}
+\contentsline {section}{\numberline {1}Objetivo}{2}
+\contentsline {section}{\numberline {2}Requisitos funcionais}{2}
+\contentsline {section}{\numberline {3}Composi\IeC {\c c}\IeC {\~a}o do grupo}{2}
+\contentsline {section}{\numberline {4}Ferramentas a serem utilizadas}{2}

@@ -1,0 +1,161 @@
+\documentclass[numbers,a4paper,12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage{natbib}
+\usepackage{url}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[export]{adjustbox}
+\usepackage{vmargin}
+\usepackage{textcomp}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\newtheorem{definition}{Definição}
+\newtheorem{example}{Exemplo}
+\newtheorem{algoritmo}{Algoritmo}
+\newtheorem{theorem}{Teorema}
+\newtheorem{remark}{Observação}
+
+\newcommand{\vecx}{\underline{x}}
+
+\title{Proposta de projeto}	% Title
+\author{Big Data}			% Author
+\date{\today}				% Date
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.3]{logo.jpg}\\[1.0 cm]	% University Logo
+    \textsc{\LARGE Universidade Federal do Rio de Janeiro\newline\newline}\\[2.0 cm]	% University Name
+	\textsc{ Engenharia de Controle e Automação}\\[0.5 cm]				% Course Code
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Big Data}\\
+			Professor : \\Alexandre de Assis\\
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+            
+			\begin{flushright} \large
+			\emph{Aluno(s) :} \\
+			Gabriel Pelielo\\
+            Gabriel Premoli Monteiro\\
+            Gabriela Lúcide\\
+            Jean Américo\\
+		\end{flushright}
+       	
+
+   
+	\end{minipage}\\[2 cm]
+	
+\begin{center}
+	\small \today
+\end{center}
+    
+    
+    
+    
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivo}
+
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[]{}   
+%		%\vspace{-0.15cm}
+%		\caption{}
+%		\label{}
+%	\end{center}
+%\end{figure}}
+
+A disciplina de Big Data oferece a oportunidade dos alunos implementarem o conteúdo oferecido por meio de um projeto. Com esse objetivo, levantamos a seguinte proposta: 
+
+"Desenvolver uma aplicação que utiliza o Apache Spark para o processamento de dados obtidos por meio de uma API externa do facebook (em formato .JSON) relativos à eventos públicos, utilizando o resultado de seu processamento para produzir inicialmente um mapa de calor condizente à concentração de eventos numa dada área."
+
+\section{Requisitos funcionais}
+
+\begin{itemize}
+	\item Interface de busca a partir de seleção por lista;
+	\item Geração de mapa de calor interativo;
+\end{itemize}
+
+\section{Composição do grupo}
+
+O grupo é composto de quatro componentes. São eles:
+
+\begin{itemize}
+	\item Gabriel Pelielo - gabrielpelielo@poli.ufrj,br ;
+	\item Gabriel Premoli - gabriel\_premolimonteiro@poli.ufrj.br ;
+	\item Gabriela Lúcide - gpinhao@poli.ufrj.br ;
+	\item Jean Américo - jamerico@poli.ufrj.br ;
+\end{itemize}
+
+\section{Ferramentas a serem utilizadas}
+
+Pretende-se utilizar:
+
+\begin{enumerate}
+	\item GitHub;
+	\item Apache Spark;
+	\item API facebook;
+	\item XAMPP;
+	\item Hadoop File Sistem (HDFS);
+\end{enumerate}
+
+%\newpage
+
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{biblist}
+
+%Credits -Divjot Kaur - Linus
+%Based on "Operating Systems Laboratory"
+%https://www.overleaf.com/latex/templates/operating-systems-laboratory/wswyyqztyryp#.WPJmndIrJhE
+
+\end{document}
