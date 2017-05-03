@@ -4,12 +4,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'search_events':
-            search();
+            $neighborhood = $_POST['neighborhood'];
+            search($neighborhood);
             break;
     }
 }
 
-function search()
+function search($neighborhood)
 {
     if (!session_id()) {
         session_start();
@@ -25,7 +26,8 @@ function search()
 
 
     try {
-        $response = $fb->get('/search?q=Rio de Janeiro&type=event&limit=200');
+        $query = '/search?q='. $neighborhood . '&type=event&limit=200';
+        $response = $fb->get($query);
         $graphEdge = $response->getGraphEdge();
     } catch (Facebook\Exceptions\FacebookResponseException $e) {
       // When Graph returns an error
