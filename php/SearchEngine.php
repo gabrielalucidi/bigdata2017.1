@@ -56,7 +56,9 @@ class SearchEngine
             $success = false;
         }
 
-        if (fwrite($handle, $this->results) === false) {
+        $results_array = json_decode($this->results);
+        $results_string_formatted = json_encode($results_array, JSON_PRETTY_PRINT);
+        if (fwrite($handle, $results_string_formatted) === false) {
             $success = false;
         }
 
