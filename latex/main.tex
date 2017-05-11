@@ -116,14 +116,23 @@
 
 A disciplina de Big Data oferece a oportunidade dos alunos implementarem o conteúdo oferecido por meio de um projeto. Com esse objetivo, levantamos a seguinte proposta: 
 
-"Desenvolver uma aplicação que utiliza o Apache Spark para o processamento de dados obtidos por meio de uma API externa do facebook (em formato .JSON) relativos à eventos públicos, utilizando o resultado de seu processamento para produzir inicialmente um mapa de calor condizente à concentração de eventos numa dada área."
+Desenvolver uma aplicação que utiliza o Apache Spark para o processamento de dados obtidos por meio de uma API externa do facebook (em formato .JSON) relativos à eventos públicos, utilizando o resultado de seu processamento para produzir inicialmente um mapa de calor condizente à concentração de eventos numa dada área.
+
+Nesse sentido, a restrição de Big Data estaria intimamente ligada ao volume de dados retornado pela API.
 
 \section{Requisitos funcionais}
 
+Como proposta inicial, os requisitos funcionais objetivados são: 
+
 \begin{itemize}
-	\item Interface de busca a partir de seleção por lista;
-	\item Geração de mapa de calor interativo;
+\item Permitir a pesquisa de eventos públicos do facebook a partir de uma interface de busca;
+\item A interface de busca deve permitir que o usuário defina critérios de pesquisa;
+\item A princípio, o critério de pesquisa a ser definido deve ser apenas um: localização de eventos, sendo este uma lista de bairros cariocas;
+\item A interface de busca deve retornar seus resultados em forma de um mapa de calor;
+\item O mapa de calor deve evidenciar os pontos do bairro carioca escolhido onde se concentram os eventos públicos do facebook.
 \end{itemize}
+
+Espera-se que, implementadas tais funções, novas funcionalidades sejam consideradas.
 
 \section{Composição do grupo}
 
@@ -146,6 +155,7 @@ Pretende-se utilizar:
 	\item API facebook;
 	\item XAMPP;
 	\item Hadoop File Sistem (HDFS);
+	\item Google charts;
 \end{enumerate}
 
 %\newpage

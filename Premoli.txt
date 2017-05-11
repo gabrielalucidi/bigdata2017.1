@@ -10,3 +10,10 @@ http://stackoverflow.com/questions/27478096/cannot-read-a-file-from-hdfs-using-s
 
 Leitura .JSON spark
 https://docs.databricks.com/spark/latest/data-sources/read-json.html
+
+facebook data mining
+http://apache-spark-user-list.1001560.n3.nabble.com/facebook-data-mining-with-Spark-td6072.html
+
+scala extractors
+https://booksites.artima.com/programming_in_scala_2ed/examples/html/ch26.html
+http://alvinalexander.com/scala/how-to-extract-parts-strings-match-regular-expression-regex-scala
