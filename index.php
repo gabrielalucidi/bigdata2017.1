@@ -72,6 +72,10 @@ ini_set('display_errors', '1');
                 </div>
             </div>
             <div class="row">
+                <div id="status">
+                </div>
+            </div>
+            <div class="row">
                 <div id="results">
                 </div>
             </div>

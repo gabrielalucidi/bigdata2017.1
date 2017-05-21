@@ -5,8 +5,11 @@ $(document).ready(function(){
         var ajaxurl = 'php/Ajax.php',
         data =  {'action': clickBtnValue, 'neighborhood' : neighborhood};
         $.post(ajaxurl, data, function (response) {
-            var myJSONText = JSON.stringify(response);
-            $("#results").html(myJSONText);
+            var response = JSON.parse(response);
+            var status = response.status;
+            $("#status").html(status);
+            var results = response.results;
+            $("#results").html(results);
         });
     });
 

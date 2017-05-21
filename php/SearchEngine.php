@@ -66,4 +66,12 @@ class SearchEngine
 
         return $success;
     }
+
+    public function triggerSpark()
+    {
+        $cmd = '/home/bigdata/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ../facebook-event-mapper/target/scala-2.10/facebook-event-mapper_2.10-0.2.jar "../json/" 2>&1';
+        $log = shell_exec($cmd);
+
+        return $log;
+    }
 }
