@@ -17,3 +17,6 @@ http://apache-spark-user-list.1001560.n3.nabble.com/facebook-data-mining-with-Sp
 scala extractors
 https://booksites.artima.com/programming_in_scala_2ed/examples/html/ch26.html
 http://alvinalexander.com/scala/how-to-extract-parts-strings-match-regular-expression-regex-scala
+
+spark scala compilation
+http://spark.apache.org/docs/1.2.0/quick-start.html#self-contained-applications
