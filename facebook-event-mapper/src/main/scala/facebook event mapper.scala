@@ -17,19 +17,17 @@ object Facebook_Event_Mapper {
 
 	val spark = SparkSession
       .builder()
-      .appName("Spark SQL basic example")
+      .appName("Facebook Event Mapper")
       .config("spark.some.config.option", "some-value")
       .getOrCreate()
 
 import spark.implicits._
 
-	 val conf = new SparkConf().setAppName("Facebook Events Mapper")
-
 	val events = spark.read.json(jsonpath+"results.json")
 
 	val latlong = events.select($"place.location.latitude",$"place.location.longitude")
 
-	val latlongfiltered = latlong.select($"latitude" === 0 or $"latitude" > 0 or $"latitude" < 0)
+	val latlongfiltered = latlong.filter($"latitude" === 0 or $"latitude" > 0 or $"latitude" < 0)
 
 	latlongfiltered.write.mode("overwrite").json(jsonpath+"latlong.json")
 
