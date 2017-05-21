@@ -32,5 +32,9 @@ import spark.implicits._
 	latlongfiltered.write.mode("overwrite").json(jsonpath+"latlong.json")
 
 	spark.stop()
+
+	//latlongfiltered.collect.foreach(print)/
+
+	val returned = latlongfiltered
   }
 }

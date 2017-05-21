@@ -4,10 +4,10 @@
 	<info
 		organisation="default"
 		module="facebook-event-mapper_2.10"
-		revision="0.1"
+		revision="0.2"
 		conf="sources"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170520212337"/>
+		date="20170521125817"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
