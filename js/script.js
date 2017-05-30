@@ -5,6 +5,7 @@ $(document).ready(function(){
         var ajaxurl = 'php/Ajax.php',
         data =  {'action': clickBtnValue, 'neighborhood' : neighborhood};
         $.post(ajaxurl, data, function (response) {
+            console.log(response);
             var response = JSON.parse(response);
             var status = response.status;
             $("#status").html(status);
