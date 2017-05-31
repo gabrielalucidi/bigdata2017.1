@@ -13,12 +13,47 @@ ini_set('display_errors', '1');
     </title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
-    <script type="text/JavaScript" src="libs/jquery/jquery-1.11.1.min.js"></script>
-    <script type="text/JavaScript" src="js/script.js"></script>
-    <script type="text/JavaScript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 30px;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 20px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #floating-panel {
+        background-color: #fff;
+        border: 1px solid #999;
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 7%;
+        z-index: 5;
+      }
+    </style>
     </head>
-
     <body>
+      <div id="map"></div>
+      <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX5O6adZKkGf1OKi6cfxrBdwtwCHkMYMA&libraries=visualization">
+      </script>
+
         <div class="container">
             <h1>
                 Events in RIO!
@@ -57,7 +92,7 @@ ini_set('display_errors', '1');
                             <option value="Penha">Penha</option>
                             <option value="Recreio dos Bandeirantes">Recreio dos Bandeirantes</option>
                             <option value="Tijuca">Tijuca</option>
-                            <option value="Benfica">Urca</option>
+                            <option value="Urca">Urca</option>
                         </select>
                         <button type="submit" class="button btn btn-success btn-sm" name="search_events" value="search_events">
                             Submit
@@ -79,6 +114,26 @@ ini_set('display_errors', '1');
                 <div id="results">
                 </div>
             </div>
+	    <div>Resultados:
+                <p id="resultados">
+            </p>
+            </div>
         </div>
+
+        <div id="floating-panel">
+        <button onclick="toggleHeatmap()">Mapa de calor</button>
+        <button onclick="changeGradient()">Mudar gradiente</button>
+        <button onclick="changeRadius()">Mudar raio</button>
+        <button onclick="changeOpacity()">Mudar opacidade</button>
+      </div>
+
+
+
+    <script type="text/JavaScript" src="libs/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/JavaScript" src="js/script.js"></script>
+    <script type="text/JavaScript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+
     </body>
 </html>
+
