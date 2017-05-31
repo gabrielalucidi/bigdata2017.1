@@ -12,9 +12,14 @@ import org.apache.spark.sql.types._
 
 object Facebook_Event_Mapper {
 	def main(args: Array[String]) {
-
-	val jsonpath = args(0)
-
+	
+	//define the paths vars//
+	val mainpath = args(0)
+	val jsonpath = mainpath + "json/"
+	val dbpath   = jsonpath + "db/last"
+	val csvpath  = mainpath + "csv/"
+	val resultspath = jsonpath + "results/"
+	
 	val spark = SparkSession
       .builder()
       .appName("Facebook Event Mapper")
@@ -23,15 +28,19 @@ object Facebook_Event_Mapper {
 
 import spark.implicits._
 
-	val events = spark.read.json(jsonpath+"results.json")
+	val events = spark.read.json(dbpath+"*.json")
 
-	val latlong = events.select($"place.location.latitude",$"place.location.longitude")
+	val bairros = spark.read.option("header","true").option("charset","iso-8859-1").csv(csvpath+"bairros_rj.csv")
+
+	val eventsrj = spark.filter(($"place.location.state" === "RJ") or ($"place.location.city" === "Rio de Janeiro"))
+	
+	val latlong = eventsrj.select($"place.location.latitude",$"place.location.longitude")
 
 	val latlongfiltered = latlong.filter($"latitude" === 0 or $"latitude" > 0 or $"latitude" < 0)
 
-	latlongfiltered.write.mode("overwrite").json(jsonpath+"latlong.json")
+	//val latlongfiltered = latlong.filter(!isnull($"latitude") and !isnull($"longitude"))
 
-	//latlongfiltered.collect.foreach(print)
+	latlongfiltered.write.mode("overwrite").json(resultspath+"latlong.json")
 
 	//val returned = latlongfiltered
 
