@@ -47,30 +47,9 @@ class SearchEngine2
     {
         $success = true;
         //If you're having permission problems, go to '../json/' folder in terminal
-        //and use 'sudo chmod 777 -R ./' command
+        //and use 'sudo chmod 777 results.json' command
         $fileName = '../json/db/last' . $this->neighborhood . '.json';
         if (!$handle = fopen($fileName, 'w')) {
-            $success = false;
-        }
-
-        foreach ($this->results as $key => $event) {
-            if (fwrite($handle, $event . "\n") === false) {
-                $success = false;
-            }
-        }
-
-        fclose($handle);
-
-        return $success;
-    }
-
-    public function writeResultsinDB()
-    {
-        $success = true;
-        //If you're having permission problems, go to '../json/' folder in terminal
-        //and use 'sudo chmod 777 -R ./' command
-        $fileName = '../json/db/last' . $this->neighborhood . '.json';
-        if (!$handle = fopen($fileName, 'a')) {
             $success = false;
         }
 
