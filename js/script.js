@@ -10,19 +10,17 @@ $(document).ready(function(){
 
       var response = JSON.parse(response);
       var status = response.status;
-      $("#status").html(status);
+      console.log(status);
       var results = response.results;
-      $("#results").html(results);
+      console.log(results);
 
       //TRANSFORMING THE DATA IN A BETTER FORMAT TO ITERATE
 
       var results = results.replace(/\n/g, ",");
       var results = results.slice(0, -1);
       var newjsonstring = '{"events":[' + results + ']}';
-      console.log(newjsonstring);
       var obj = JSON.parse(newjsonstring);
       var events = obj.events[0];
-      document.getElementById("resultados").innerHTML = events.latitude + ", " + events.longitude;
 
       //INSERTING THE LOCATION DATA TO THE heatmapData ARRAY
 
@@ -44,19 +42,12 @@ $(document).ready(function(){
           //mapTypeId: 'satellite'
         });
 
-
-
         heatmap = new google.maps.visualization.HeatmapLayer({
           data: heatmapData,
           map: map,
           radius: 50 //default radius of the points
         });
       }
-
-
-
     });
-
   });
-
 });
