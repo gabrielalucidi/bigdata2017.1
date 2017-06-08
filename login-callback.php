@@ -7,7 +7,7 @@ if (!session_id()) {
 
 $fb = new Facebook\Facebook([
   'app_id' => '1684179328553694',
-  'app_secret' => '40c355e2a78c6affe6edc7052508f7fb',
+  'app_secret' => '8629679f39a68fb4c84bf1d31fc61c8c',
   'default_graph_version' => 'v2.8',
 ]);
 
