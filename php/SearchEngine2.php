@@ -64,6 +64,27 @@ class SearchEngine2
         return $success;
     }
 
+    public function writeResultsinDB()
+    {
+        $success = true;
+        //If you're having permission problems, go to '../json/' folder in terminal
+        //and use 'sudo chmod 777 -R ./' command
+        $fileName = '../json/db/all' . $this->neighborhood . '.json';
+        if (!$handle = fopen($fileName, 'a')) {
+            $success = false;
+        }
+
+        foreach ($this->results as $key => $event) {
+            if (fwrite($handle, $event . "\n") === false) {
+                $success = false;
+            }
+        }
+
+        fclose($handle);
+
+        return $success;
+    }
+
     public function triggerSpark()
     {
         $cmd = '/home/bigdata/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ../facebook-event-mapper/target/scala-2.10/facebook-event-mapper_2.10-0.2.jar "../json/" 2>&1';
