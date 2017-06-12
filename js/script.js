@@ -7,17 +7,13 @@ $(document).ready(function(){
     $.post(ajaxurl, data, function (response) {
 
       //COLLECT DATA FROM FILTERED JSON
-
       var response = JSON.parse(response);
-      var status = response.status;
-      console.log(status);
       var results = response.results;
       console.log(results);
 
       //TRANSFORMING THE DATA IN A BETTER FORMAT TO ITERATE
 
-      var results = results.replace(/\n/g, ",");
-      var results = results.slice(0, -1);
+      var results = results.replace(/}\s*{/g, "},{");
       var newjsonstring = '{"events":[' + results + ']}';
       var obj = JSON.parse(newjsonstring);
       var events = obj.events[0];

@@ -15,16 +15,13 @@ class SearchEngine
 
     public function init()
     {
-        if (!session_id()) {
-            session_start();
-        }
         $fb = new Facebook\Facebook([
           'app_id' => '1684179328553694',
           'app_secret' => '8629679f39a68fb4c84bf1d31fc61c8c',
           'default_graph_version' => 'v2.8',
         ]);
 
-        $token = $_SESSION['facebook_access_token'];
+        $token = "EAAX7wI6d0t4BAJew7fUOjk4ziYZCNrwm01goDmQ9hL08l5E30CcIjMOJZA5ttnuxGVa9W8UbO3lwAPsA5g8IWxb58ZC9XZA6XTy5BOl25aZB09r2VFBq7jfAaetn8ZCdQmV9l3c2mVpZCo5qMXuZA4RsS4J7hZC5CcmAZD";
         $fb->setDefaultAccessToken($token);
 
         try {
@@ -47,12 +44,13 @@ class SearchEngine
         return $this->results;
     }
 
-    public function writeResultsinJSON()
+    public function writeResultsinDBs()
     {
         $success = true;
         //If you're having permission problems, go to '../json/' folder in terminal
         //and use 'sudo chmod 777 results.json' command
-        if (!$handle = fopen('../json/results.json', 'w')) {
+        $fileName = '/opt/lampp/htdocs/bigdata/json/db/last/' . $this->neighborhood . '.json';
+        if (!$handle = fopen($fileName, 'w')) {
             $success = false;
         }
 

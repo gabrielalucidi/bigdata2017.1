@@ -4,7 +4,7 @@
 # php /opt/lampp/htdocs/bigdata/php/spark-warehouse/cron.php
 
 <?php
-require_once __DIR__ . '/../SearchEngine2.php';
+require_once __DIR__ . '/../SearchEngine.php';
 
 $neighborhoods = ["Rio de Janeiro","Andarai","Bangu","Barra da Tijuca","Benfica","Bonsucesso","Cascadura","Catete","Centro","Cidade Universitária","Copacabana","Del Castilho","Glória","Grajau","Gávea","Humaitá","Ipanema","Jardim Botânico","Lagoa","Laranjeiras","Leblon","Madureira","Meier","Pavuna","Penha","Recreio dos Bandeirantes","Tijuca","Urca"];
 
@@ -14,7 +14,7 @@ foreach ($neighborhoods as $index => $neighborhood) {
 
 function search($neighborhood)
 {
-    $searchEngine = new SearchEngine2();
+    $searchEngine = new SearchEngine();
     $searchEngine->setNeighborhood($neighborhood);
     $searchEngine->init();
     $results = $searchEngine->getResults();
