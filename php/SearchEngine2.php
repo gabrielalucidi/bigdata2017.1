@@ -21,7 +21,8 @@ class SearchEngine2
           'default_graph_version' => 'v2.8',
         ]);
 
-        $fb->setDefaultAccessToken($fb->getApp()->getAccessToken());
+        $token = "EAAX7wI6d0t4BAJew7fUOjk4ziYZCNrwm01goDmQ9hL08l5E30CcIjMOJZA5ttnuxGVa9W8UbO3lwAPsA5g8IWxb58ZC9XZA6XTy5BOl25aZB09r2VFBq7jfAaetn8ZCdQmV9l3c2mVpZCo5qMXuZA4RsS4J7hZC5CcmAZD";
+        $fb->setDefaultAccessToken($token);
 
         try {
             $query = '/search?q='. $this->neighborhood . '&type=event&limit=500';
@@ -48,29 +49,8 @@ class SearchEngine2
         $success = true;
         //If you're having permission problems, go to '../json/' folder in terminal
         //and use 'sudo chmod 777 results.json' command
-        $fileName = '../json/db/last' . $this->neighborhood . '.json';
+        $fileName = '/opt/lampp/htdocs/bigdata/json/db/last/' . $this->neighborhood . '.json';
         if (!$handle = fopen($fileName, 'w')) {
-            $success = false;
-        }
-
-        foreach ($this->results as $key => $event) {
-            if (fwrite($handle, $event . "\n") === false) {
-                $success = false;
-            }
-        }
-
-        fclose($handle);
-
-        return $success;
-    }
-
-    public function writeResultsinDB()
-    {
-        $success = true;
-        //If you're having permission problems, go to '../json/' folder in terminal
-        //and use 'sudo chmod 777 -R ./' command
-        $fileName = '../json/db/all' . $this->neighborhood . '.json';
-        if (!$handle = fopen($fileName, 'a')) {
             $success = false;
         }
 
