@@ -18,7 +18,7 @@ function search($neighborhood)
     $searchEngine->setNeighborhood($neighborhood);
     $searchEngine->init();
     $results = $searchEngine->getResults();
-    $success = $searchEngine->writeResultsinJSON();
+    $success = $searchEngine->writeResultsinDB();
     $payload = array();
     if ($success) {
         //$searchEngine->triggerSpark();

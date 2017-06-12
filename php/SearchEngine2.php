@@ -44,7 +44,7 @@ class SearchEngine2
         return $this->results;
     }
 
-    public function writeResultsinJSON()
+    public function writeResultsinDBs()
     {
         $success = true;
         //If you're having permission problems, go to '../json/' folder in terminal
