@@ -1,0 +1,19 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+}
+#neighborhoods-select-container {
+  position: absolute;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
+#neighborhoods-submit {
+  z-index: 2;
+}
