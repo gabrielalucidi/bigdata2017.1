@@ -19,6 +19,6 @@ function search($neighborhood)
     $searchEngine->init();
     $success = $searchEngine->writeResultsinDB();
     if ($success) {
-        //$searchEngine->triggerSpark();
+        $searchEngine->triggerSpark();
     }
 }
