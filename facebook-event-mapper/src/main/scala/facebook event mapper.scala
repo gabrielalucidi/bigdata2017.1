@@ -34,7 +34,7 @@ import spark.implicits._
 
 	//val bairros = spark.read.option("header","true").option("charset","iso-8859-1").csv(csvpath+"bairros_rj.csv")
 
-	val eventsrj = spark.filter(($"place.location.state" === "RJ") or ($"place.location.city" === "Rio de Janeiro")).distinct
+	val eventsrj = events.filter(($"place.location.state" === "RJ") or ($"place.location.city" === "Rio de Janeiro")).distinct
 
 	val latlong = eventsrj.select($"place.location.latitude",$"place.location.longitude")
 
