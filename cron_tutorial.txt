@@ -1,0 +1,4 @@
+// first run the command
+crontab -e
+// then add the line to run the every day at 5 am
+0 5 * * * php /opt/lampp/htdocs/bigdata/php/spark-warehouse/cron.php
